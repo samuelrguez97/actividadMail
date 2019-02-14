@@ -1,0 +1,5 @@
+A hacer:
+	-Configurar tomcat par ssl
+	-Encriptar la contraseña del usuario
+	-Guardar el hex de confirmacion del correo en la base de datos
+	-Conseguir un host gratuito para despliegue de la aplicacion

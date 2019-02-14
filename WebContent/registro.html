@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro</title>
+	</head>
+	<body>
+		<h1>Registro de usuarios</h1>
+		<form method="post" action="registro" name="form">
+			<table>
+				<tr>
+					<td>Nombre</td>
+					<td><input type="text" required name="nombre" id="nombre"/></td>
+				</tr>
+				<tr>
+					<td>Apellidos</td>
+					<td><input type="text" required name="apellidos" id="apellidos"/></td>
+				</tr>
+				<tr>
+					<td>Teléfono</td>
+					<td><input type="text" required name="telefono" id="telefono"/></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" required name="email" id="email"/></td>
+				</tr>
+				<tr>
+					<td>Usuario</td>
+					<td><input type="text" required name="usuario" id="usuario"/></td>
+				</tr>
+				<tr>
+					<td>Clave</td>
+					<td><input type="password" required name="clave" id="clave"/></td>
+				</tr>
+			</table>
+			<a href="javascript:document.form.submit()">Enviar</a>
+		</form>
+		<p>Si ya estas registrado dirigete a este <a href="login.html">link</a></p>
+	</body>
+</html>
