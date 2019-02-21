@@ -2,6 +2,8 @@ package actividadMail;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.bind.DatatypeConverter;
 
 @WebServlet(urlPatterns = "/login")
 
@@ -31,6 +34,9 @@ public class loginServlet extends HttpServlet {
 		try {
 			usuario = req.getParameter("usuario");
 			clave = req.getParameter("clave");
+			MessageDigest md = MessageDigest.getInstance("SHA-512");
+			byte [] a = md.digest((usuario + clave).getBytes());
+			clave = DatatypeConverter.printHexBinary(a);
 			pw = resp.getWriter();
 			conexion = DriverManager.getConnection ("jdbc:mysql://localhost/mail", "root", "practicas");
 			Statement s = conexion.createStatement();
@@ -38,19 +44,11 @@ public class loginServlet extends HttpServlet {
 			if(rs.next()) {
 				sesion = req.getSession();
 				sesion.setAttribute("usuario", usuario);
-				resp.sendRedirect("loginExito");
+				resp.sendRedirect("infoRegistro.jsp");
 			} else {
-				pw.println("<html>");
-				pw.println("<head>");
-				pw.println("<meta charset=\'UTF-8\'>");
-				pw.println("<title>Error al entrar</title>");
-				pw.println("</head>");
-				pw.println("<body>");
-				pw.println("<p>Datos incorrectos o la cuenta no existe, vuelva a intentarlo <a href='login.html'>aquí</a></p>");
-				pw.println("</body>");
-				pw.println("</html>");
+				resp.sendRedirect("error.html");
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | NoSuchAlgorithmException e) {
 			resp.resetBuffer();
 			throw new ServletException(e);
 		} finally {

@@ -20,7 +20,8 @@ public class logoutServlet extends HttpServlet {
 		if(sesion.getAttribute("usuario") == null) {
 			resp.sendRedirect("login.html");
 		} else {
-			sesion.removeAttribute("usuario");
+//			sesion.removeAttribute("usuario");
+			sesion.invalidate();
 			resp.sendRedirect("login.html");
 		}
 	}
