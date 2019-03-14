@@ -3,22 +3,27 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
 	</head>
 	<body>
-		<h1>Login de usuarios</h1>
-		<form method="post" action="login">
-			<table>
-				<tr>
-					<td>Usuario:</td>
-					<td><input type="text" required name="usuario"/></td>
-				</tr>
-				<tr>
-					<td>Clave:</td>
-					<td><input type="password" required name="clave"/></td>
-				</tr>
-			</table>
-			<input type="submit" name="submit" value="Entrar"/>
-		</form>
-		<p>Si no estas registrado dirigete a este <a href="registro.html">link</a></p>
+	<div class="cuerpo">
+		<div class="contenido">
+			<div class="cabecera"><h1>Login de usuarios</h1></div>
+				<form method="post" action="login">
+					<table>
+						<tr>
+							<td>Usuario:</td>
+							<td><input type="text" required name="usuario"/></td>
+						</tr>
+						<tr>
+							<td>Clave:</td>
+							<td><input type="password" required name="clave"/></td>
+						</tr>
+					</table>
+					<input type="submit" name="submit" value="Entrar"/>
+				</form>
+				<p>Si no estas registrado dirigete a este <a href="registro.html">link</a></p>
+			</div>
+		</div>
 	</body>
 </html>

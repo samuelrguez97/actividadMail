@@ -19,9 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.DatatypeConverter;
 
-@WebServlet(urlPatterns = "/registroConf")
+@WebServlet(urlPatterns = "/reenviarMail")
 
-public class confirmacionMailServlet extends HttpServlet {
+public class ReenviarMail extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -53,11 +53,12 @@ public class confirmacionMailServlet extends HttpServlet {
 			msg.setContent(sb.toString(), "text/html");
 			Transport.send(msg);
 					
-			req.getRequestDispatcher("/aConfirmar.jsp").forward(req, resp);
+			req.getRequestDispatcher("/infoRegistro.jsp").forward(req, resp);
 						
 		} catch (MessagingException | NoSuchAlgorithmException e) {
 			throw new ServletException(e);
 		}
 		//
 	}
+	
 }

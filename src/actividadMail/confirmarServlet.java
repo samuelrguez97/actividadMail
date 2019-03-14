@@ -39,7 +39,7 @@ public class confirmarServlet extends HttpServlet {
 				if (hashEmail.equals(hashEmail_id)) {
 					PreparedStatement ps = conexion.prepareStatement("UPDATE usuarios SET hashEmail = '' WHERE usuario = '" + usuario + "'");
 					ps.executeUpdate();
-					resp.sendRedirect("infoRegistro.jsp");
+					req.getRequestDispatcher("/confirmado.jsp").forward(req, resp);
 				}
 				
 			}
