@@ -31,7 +31,6 @@ public class NuevaNoticia extends HttpServlet {
 		try {
 			
 			pw = resp.getWriter();
-			
 			String titulo = req.getParameter("titulo");
 			String localizacion = req.getParameter("localizacion");
 			
