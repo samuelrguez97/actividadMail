@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/infoRegistro.jsp", "/perfil.jsp", "/noticias-recientes"})
+@WebFilter(urlPatterns = {"/infoRegistro.jsp", "/perfil.jsp", "/noticias-recientes", "/noticias-nueva.jsp", "/insertar-noticia"})
 public class loginFilter implements Filter {
 
 	@Override

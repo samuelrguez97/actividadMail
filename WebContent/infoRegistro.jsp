@@ -25,6 +25,7 @@
 		<div class="contenido">
 			<div class="cabecera"><h1>Menu principal</h1></div>
 			<p><a href="noticias-recientes">Noticias recientes</a></p>
+			<p><a href="noticias-nueva.jsp">Insertar nueva noticia</a></p>
 		</div>
 	</div>
 </body>
